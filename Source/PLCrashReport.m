@@ -291,10 +291,10 @@ error:
         timestamp = [NSDate dateWithTimeIntervalSince1970: systemInfo->timestamp];
     
     /* Done */
-    return [[[PLCrashReportSystemInfo alloc] initWithOperatingSystem: systemInfo->operating_system
+    return [[[PLCrashReportSystemInfo alloc] initWithOperatingSystem: (PLCrashReportOperatingSystem)systemInfo->operating_system
                                               operatingSystemVersion: [NSString stringWithUTF8String: systemInfo->os_version]
                                                 operatingSystemBuild: osBuild
-                                                        architecture: systemInfo->architecture
+                                                        architecture: (PLCrashReportArchitecture)systemInfo->architecture
                                                            timestamp: timestamp] autorelease];
 }
 
@@ -310,7 +310,7 @@ error:
         return nil;
     }
 
-    return [[[PLCrashReportProcessorInfo alloc] initWithTypeEncoding: processorInfo->encoding
+    return [[[PLCrashReportProcessorInfo alloc] initWithTypeEncoding: (PLCrashReportProcessorTypeEncoding)processorInfo->encoding
                                                                 type: processorInfo->type
                                                              subtype: processorInfo->subtype] autorelease];
 }
@@ -528,7 +528,7 @@ error:
                 output[i * 2 + 0] = hex[c >> 4];
                 output[i * 2 + 1] = hex[c & 0x0F];
             }
-            output[sizeof(output)] = '\0';
+            output[(IMAGE_UUID_DIGEST_LEN * 2)] = '\0';
     
             uuid = [[[NSString alloc] initWithBytes: output length: sizeof(output) - 1 encoding: NSASCIIStringEncoding] autorelease];
         }
