@@ -1,4 +1,5 @@
 *.xcodeproj/*.mode2v3
 *.xcodeproj/*.pbxuser
 *.xcodeproj/xcuserdata
+*.xcodeproj/project.xcworkspace
 .DS_Store
