@@ -2676,6 +2676,7 @@
 				CURRENT_PROJECT_VERSION = "1.1-beta1";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Dependencies/protobuf-2.0.3/include\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = NO;
@@ -2699,6 +2700,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CURRENT_PROJECT_VERSION = "1.1-beta1";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/$(DERIVED_FILES_DIR)\"",
 					"\"$(SRCROOT)/Dependencies/protobuf-2.0.3/include\"",
